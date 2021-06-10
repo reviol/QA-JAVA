@@ -11,11 +11,11 @@ public class AutoApplication {
 		SpringApplication.run(AutoApplication.class, args);
 
 // Strong and Week Dependency.......
-		Car carForFamily = new Car();
-		System.out.println(carForFamily.readyForSale());
-
-		Car carForYoung = new Car();
-		System.out.println(carForYoung.readyForSale());
+//		Car carForFamily = new Car();
+//		System.out.println(carForFamily.readyForSale());
+//
+//		Car carForYoung = new Car();
+//		System.out.println(carForYoung.readyForSale());
 
 // Dependency Injection for Constructor.......
 //		Car carForFamily = new Car(new ClassicConfiguration());
@@ -25,12 +25,12 @@ public class AutoApplication {
 //		System.out.println(carForYoung.readyForSale());
 
 // Spring Beans Injection.......
-//		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-//
-//		Car carForFamilyNew = context.getBean("classicCar", Car.class);
-//		Car carForYoungNew = context.getBean("sportCar", Car.class);
-//
-//		System.out.println(carForFamilyNew.readyForSale());
-//		System.out.println(carForYoungNew.readyForSale());
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+
+		Car carForFamilyNew = context.getBean("classicCar", Car.class);
+		Car carForYoungNew = context.getBean("sportCar", Car.class);
+
+		System.out.println(carForFamilyNew.readyForSale());
+		System.out.println(carForYoungNew.readyForSale());
 	}
 }
