@@ -55,5 +55,4 @@ class CalculatorApplicationTests {
 
 		assert calculator.division(first, second).equals(expected);
 	}
-
 }
