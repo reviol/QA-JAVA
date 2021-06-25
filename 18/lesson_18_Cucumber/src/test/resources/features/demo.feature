@@ -1,6 +1,6 @@
 Feature: Saving user activity in DB
 
-#  @smoke
+
   Scenario: Save data for user by id
     Given We have user id in DB
     When User sent request to get info

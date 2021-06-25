@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:citrus="http://www.citrusframework.org/schema/config"
+       xmlns:citrus-jms="http://www.citrusframework.org/schema/jms/config"
+       xmlns:citrus-ws="http://www.citrusframework.org/schema/ws/config"
+       xmlns:citrus-http="http://www.citrusframework.org/schema/http/config"
+       xmlns:citrus-test="http://www.citrusframework.org/schema/testcase"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
+       http://www.citrusframework.org/schema/jms/config http://www.citrusframework.org/schema/jms/config/citrus-jms-config.xsd
+       http://www.citrusframework.org/schema/ws/config http://www.citrusframework.org/schema/ws/config/citrus-ws-config.xsd
+       http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd
+       http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+	
+    <!-- Common settings -->
+    <context:property-placeholder location="classpath:citrus.properties"/>
+
+    <citrus:schema-repository id="schemaRepository"/>
+
+    <citrus:global-variables>
+        <citrus:variable name="project.name" value="Citrus Integration Tests"/>
+        <citrus:file path="classpath:citrus.properties"/>
+    </citrus:global-variables>
+
+    <citrus-http:client id="restClient"
+                        request-url="https://reqres.in/api/"
+                        request-method="GET"
+                        content-type="application/json"
+                        timeout="60000"/>
+
+<!--    <citrus-http:server id="restServer"-->
+<!--                        port="7070"-->
+<!--                        auto-start="true"-->
+<!--                        timeout="60000"/>-->
+
+<!--    <citrus:schema-repository id="schemaRepository">-->
+<!--        <citrus:locations>-->
+<!--            <citrus:location path="classpath:schemas/new/RTFFAPI_v01.wsdl"/>-->
+<!--            <citrus:location path="classpath:schemas/new/RTFFASYNCAPI_v01.wsdl"/>-->
+<!--        </citrus:locations>-->
+<!--    </citrus:schema-repository>-->
+
+<!--    <citrus:schema-repository id="schemaRepositoryService">-->
+<!--        <citrus:schemas>-->
+<!--            <citrus:schema id="RTFFAPI" location="classpath:schemas/new/RTFFAPI_v01.wsdl" />-->
+<!--        </citrus:schemas>-->
+<!--    </citrus:schema-repository>-->
+
+<!--    <citrus:schema-repository id="schemaRepositoryNotify">-->
+<!--        <citrus:schemas>-->
+<!--            <citrus:schema id="RTFFASYNCAPI" location="classpath:schemas/new/RTFFASYNCAPI_v01.wsdl" />-->
+<!--        </citrus:schemas>-->
+<!--    </citrus:schema-repository>-->
+
+<!--    <citrus:namespace-context>-->
+<!--        <citrus:namespace prefix="oms" uri="http://oms.rt.ru/"/>-->
+<!--    </citrus:namespace-context>-->
+
+    <!--For SOAP 1.1-->
+<!--    <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">-->
+<!--        <property name="soapVersion">-->
+<!--            <util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_11"/>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+    <!--For SOAP 1.2-->
+    <!--<bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
+      <property name="soapVersion">
+        <util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_12"/>
+      </property>
+    </bean>-->
+
+    <!--Маршаллеры обьектных моделей-->
+<!--    <oxm:jaxb2-marshaller id="marshaller" context-path="ru.rt.oms"/>-->
+
+    <!-- SOAP WS Client -->
+<!--    <citrus-ws:client id="soapClient"-->
+<!--                      request-url="${fsomBeta}"-->
+<!--                      timeout="60000"/>-->
+
+<!--    <citrus-ws:client id="soapHermesNotifClient"-->
+<!--                      request-url="${fsomBeta}"-->
+<!--                      timeout="60000"/>-->
+
+    <!-- SOAP WS Server with static response -->
+<!--    <citrus-ws:server id="soapHermesServer"-->
+<!--                      port="${hermes.server.port}"-->
+<!--                      auto-start="true"-->
+<!--                      resource-base="src/test/resources/schemas/new"-->
+<!--                      timeout="600000"/>-->
+
+<!--    <citrus-ws:server id="soapComServer"-->
+<!--                      port="${com.server.port}"-->
+<!--                      auto-start="true"-->
+<!--                      resource-base="src/test/resources/schemas/new"-->
+<!--                      timeout="36000000"/>-->
+
+</beans>
