@@ -1,18 +1,18 @@
 package com.example.apiHelpers;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
 import static io.restassured.RestAssured.given;
 
 @SpringBootTest
 class ApiHelpersRestAssuredTests {
 
 	@Test
-	void restAssuredHelper() {
+	void restAssuredTest() {
 		Response response = given()
 				.contentType(ContentType.JSON)
 				.when()
@@ -24,6 +24,5 @@ class ApiHelpersRestAssuredTests {
 		Assertions.assertEquals(200, response.statusCode());
 		Assertions.assertEquals("Janet", response.jsonPath().getString("data.first_name"));
 		Assertions.assertEquals("Weaver", response.jsonPath().getString("data.last_name"));
-
 	}
 }

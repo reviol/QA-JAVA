@@ -5,7 +5,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class APIClientHelper {
 
-    public static final String BASE_URL = "http:/reqres.in/api/users/";
+    public static final String BASE_URL = "https:/reqres.in/api/users/";
 
     private static Retrofit retrofit = null;
 
