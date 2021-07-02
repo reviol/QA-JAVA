@@ -1,5 +1,4 @@
-
-package com.example.apiHelpers.pojo;
+package cs.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -29,6 +28,11 @@ public class Support {
         return text;
     }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-
+    public void setText(String text) {
+        this.text = text;
+    }
 }

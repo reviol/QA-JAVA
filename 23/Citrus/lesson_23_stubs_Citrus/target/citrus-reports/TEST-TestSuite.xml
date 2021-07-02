@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSuite" time="0.0" tests="5" errors="0" skipped="0" failures="0">
+    <testcase name="Test.getTestActions" classname="cs.Test" time="0.0"/>
+    <testcase name="TestStub.getTestActions" classname="cs.TestStub" time="0.0"/>
+    <testcase name="SampleJavaIT.echoToday" classname="cs.SampleJavaIT" time="0.0"/>
+    <testcase name="SampleJavaTest.sayHello" classname="cs.SampleJavaIT" time="0.0"/>
+    <testcase name="SampleXmlIT" classname="cs.SampleXmlIT" time="0.0"/>
+</testsuite>
