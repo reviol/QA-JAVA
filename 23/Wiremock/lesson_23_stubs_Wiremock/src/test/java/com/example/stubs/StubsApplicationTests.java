@@ -47,8 +47,8 @@ class StubsApplicationTests {
 		Response response = given()
 				.contentType(ContentType.JSON)
 				.when()
-//				.get("https://reqres.in/api/users/2")
-				.get("http://localhost:5050/api/users/2")
+				.get("https://reqres.in/api/users/2")
+//				.get("http://localhost:5050/api/users/2")
 				.then()
 				.extract().response();
 

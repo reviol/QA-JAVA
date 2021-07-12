@@ -34,16 +34,18 @@
                         content-type="application/json"
                         timeout="60000"/>
 
-    <citrus-http:server id="restServer"
-                        port="5555"
-                        auto-start="true"
-                        timeout="60000"/>
-
     <citrus-http:client id="restClient"
                         request-url="http://localhost:5555/"
                         request-method="GET"
                         content-type="application/json"
                         timeout="60000"/>
+
+    <citrus-http:server id="restServer"
+                        port="5555"
+                        auto-start="true"
+                        timeout="60000"/>
+
+
 
 
 <!--    <citrus:message-validators>-->

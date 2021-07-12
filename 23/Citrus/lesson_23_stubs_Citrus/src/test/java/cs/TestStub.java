@@ -12,12 +12,12 @@ import org.testng.annotations.Test;
 
 public class TestStub extends TestNGCitrusTestRunner {
 
-    private TestContext context;
+//    private TestContext context;
 
     @Test(description = "Получение информации о пользователе")
     @CitrusTest
     public void getTestActions() {
-        this.context = citrus.createTestContext();
+//        this.context = citrus.createTestContext();
 
         http(httpActionBuilder -> httpActionBuilder
                 .client("restClient")
