@@ -97,7 +97,7 @@ class AllureApplicationTests {
 		return Stream.of(
 				Arguments.of("1", "George", "Bluth"),
 				Arguments.of("2", "Janet", "Weaver"),
-				Arguments.of("7", "Michael", "Lawson"),
+				Arguments.of("7", "Michael", "Lawson12"),
 				Arguments.of("10", "Byron", "Fields"),
 				Arguments.of("12", "Rachel", "Howell")
 		);

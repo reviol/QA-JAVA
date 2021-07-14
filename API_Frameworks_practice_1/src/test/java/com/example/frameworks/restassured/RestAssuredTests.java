@@ -1,10 +1,11 @@
-package com.example.stubs;
+package com.example.frameworks.restassured;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.json.simple.JSONObject;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static io.restassured.RestAssured.given;
 
 @SpringBootTest
-class StubsApplicationTests {
+class RestAssuredTests {
 
 	private static WireMockServer wireMockServer = new WireMockServer(WireMockConfiguration.options()
 			.port(5050));
@@ -47,8 +48,7 @@ class StubsApplicationTests {
 	}
 
 	@Test
-	void restAssuredTest() {
-
+	void getUserTest() {
 		Response response = given()
 				.contentType(ContentType.JSON)
 				.when()
@@ -57,11 +57,32 @@ class StubsApplicationTests {
 				.then()
 				.extract().response();
 
-		Assertions.assertEquals(200, response.statusCode());
 		System.out.println(response.getBody().prettyPrint());
+		Assertions.assertEquals(200, response.statusCode());
 		Assertions.assertEquals("Janet", response.jsonPath().getString("data.first_name"));
 		Assertions.assertEquals("Weaver", response.jsonPath().getString("data.last_name"));
 	}
+
+	@Test
+	void createUserTest(){
+
+		JSONObject request = new JSONObject();
+		request.put("job", "leader");
+		request.put("name", "morpheus");
+
+		Response response = given()
+				.body(request.toJSONString())
+				.contentType(ContentType.JSON)
+				.when()
+				.post("https://reqres.in/api/users")
+				.then()
+				.extract().response();
+
+		System.out.println(response.getBody().prettyPrint());
+		Assertions.assertEquals(201, response.statusCode());
+		Assertions.assertEquals("leader", response.jsonPath().getString("job"));
+		Assertions.assertEquals("morpheus", response.jsonPath().getString("name"));
+		Assertions.assertNotNull(response.jsonPath().getString("id"));
+		Assertions.assertNotNull(response.jsonPath().getString("createdAt"));
+	}
 }
-
-
