@@ -56,4 +56,19 @@ public class Test extends TestNGCitrusTestRunner {
         user.setSupport(support);
         return user;
     }
+
+//        soap(soapActionBuilder -> soapActionBuilder
+//                .client(soapClient)
+//                .send()
+//                .payload(ptxRq.convert(SubmitOrderRequest.class, submitOrderRequestComFsom(), "http://oms.rt.ru/", "submitOrderRequest" ))
+//        );
+
+//        soap(soapActionBuilder -> soapActionBuilder
+//                .client(soapClient)
+//                .receive()
+//                .xsdSchemaRepository("schemaRepositoryService")
+//                .ignore(".//orderStartDate")
+//                .payload(ptxRs.convert(SubmitOrderResponse.class, submitOrderResponseFsomCom(), "http://oms.rt.ru/", "submitOrderResponse"))
+//                .extractFromPayload("//orderOMSId", "orderOMSIdFsom")
+//        );
 }

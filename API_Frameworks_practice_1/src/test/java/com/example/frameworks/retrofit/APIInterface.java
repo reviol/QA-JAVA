@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface APIInterface {
-    @GET("2")
+    @GET("users/2")
     Call<User> getUser();
 
     @POST("users")

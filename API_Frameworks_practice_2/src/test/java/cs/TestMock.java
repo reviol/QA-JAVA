@@ -47,7 +47,7 @@ public class TestMock extends TestNGCitrusTestRunner {
                 .messageType(MessageType.JSON)
                 .payload("{\n" +
                         "    \"data\": {\n" +
-                        "        \"id\": 2,\n" +
+                        "        \"id\": ${userId},\n" +
                         "        \"email\": \"janet.weaver@reqres.in\",\n" +
                         "        \"first_name\": \"Janet\",\n" +
                         "        \"last_name\": \"Weaver\",\n" +
