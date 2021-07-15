@@ -10,19 +10,19 @@ import cs.pojo.User;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Test;
 
-public class TestStub extends TestNGCitrusTestRunner {
+public class TestMock extends TestNGCitrusTestRunner {
 
-//    private TestContext context;
+    private TestContext context;
 
     @Test(description = "Получение информации о пользователе")
     @CitrusTest
     public void getTestActions() {
-//        this.context = citrus.createTestContext();
+        this.context = citrus.createTestContext();
 
         http(httpActionBuilder -> httpActionBuilder
                 .client("restClient")
                 .send()
-                .get("api/users/2")
+                .get("api/users/${userId}")
                 .fork(true)
         );
 
@@ -65,7 +65,7 @@ public class TestStub extends TestNGCitrusTestRunner {
         User user = new User();
 
         Data data = new Data();
-        data.setId(2);
+        data.setId(Integer.valueOf(context.getVariable("userId")));
         data.setEmail("janet.weaver@reqres.in");
         data.setFirstName("Janet");
         data.setLastName("Weaver");

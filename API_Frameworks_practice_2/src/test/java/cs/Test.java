@@ -18,10 +18,15 @@ public class Test extends TestNGCitrusTestRunner {
     public void getTestActions() {
         this.context = citrus.createTestContext();
 
+        context.setVariable("value", "superValue");
+        echo("Property \"value\" = " + context.getVariable("value"));
+        echo("We have userId = " + context.getVariable("userId"));
+        echo("Property \"userId\" = " + "${userId}");
+
         http(httpActionBuilder -> httpActionBuilder
                 .client("restClientReqres")
                 .send()
-                .get("api/users/2")
+                .get("api/users/${userId}")
         );
 
         http(httpActionBuilder -> httpActionBuilder
@@ -37,7 +42,7 @@ public class Test extends TestNGCitrusTestRunner {
         User user = new User();
 
         Data data = new Data();
-        data.setId(2);
+        data.setId(Integer.valueOf(context.getVariable("userId")));
         data.setEmail("janet.weaver@reqres.in");
         data.setFirstName("Janet");
         data.setLastName("Weaver");

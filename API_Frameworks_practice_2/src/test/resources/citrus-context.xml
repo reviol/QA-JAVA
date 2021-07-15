@@ -22,6 +22,7 @@
 
     <citrus:global-variables>
         <citrus:variable name="project.name" value="Citrus Integration Tests"/>
+        <citrus:file path="classpath:citrus.properties"/>
     </citrus:global-variables>
 
     <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
