@@ -5,6 +5,9 @@ import com.consol.citrus.context.TestContext;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
 import com.consol.citrus.message.MessageType;
 import com.consol.citrus.testng.CitrusParameters;
+import cs.pojo.Data;
+import cs.pojo.Support;
+import cs.pojo.User;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
@@ -28,7 +31,7 @@ public class TestDataProvider extends TestNGCitrusTestRunner {
     }
 
     @Test(description = "Получение информации о пользователе", dataProvider = "dataProvider" )
-//    @Parameters({"context"})
+    @Parameters({"context"})
     @CitrusTest
     @CitrusParameters({"id", "name", "surname"})
     public void getTestActions(String id, String name, String surname) {
@@ -45,29 +48,30 @@ public class TestDataProvider extends TestNGCitrusTestRunner {
                 .receive()
                 .response(HttpStatus.OK)
                 .messageType(MessageType.JSON)
-                .validate("//first_name", name)
-                .validate("//last_name", surname)
-                .validate("//id", id)
-//                .payload(getJsonData(), "objectMapper")
+                .payload(getJsonData(Integer.valueOf(id), name, surname), "objectMapper")
+                .ignore("$.data.email")
+                .ignore("$.data.avatar")
+                .ignore("$.support.url")
+                .ignore("$.support.text")
         );
     }
 
-//    public User getJsonData(){
-//        User user = new User();
-//
-//        Data data = new Data();
-//        data.setId(Integer.valueOf(context.getVariable("userId")));
-//        data.setEmail("janet.weaver@reqres.in");
-//        data.setFirstName("Janet");
-//        data.setLastName("Weaver");
-//        data.setAvatar("https://reqres.in/img/faces/2-image.jpg");
-//        user.setData(data);
-//
-//        Support support = new Support();
-//        support.setUrl("https://reqres.in/#support-heading");
-//        support.setText("To keep ReqRes free, contributions towards server costs are appreciated!");
-//
-//        user.setSupport(support);
-//        return user;
-//    }
+    public User getJsonData(Integer id, String name, String surname){
+        User user = new User();
+
+        Data data = new Data();
+        data.setId(id);
+        data.setEmail("janet.weaver@reqres.in");
+        data.setFirstName(name);
+        data.setLastName(surname);
+        data.setAvatar("https://reqres.in/img/faces/2-image.jpg");
+        user.setData(data);
+
+        Support support = new Support();
+        support.setUrl("https://reqres.in/#support-heading");
+        support.setText("To keep ReqRes free, contributions towards server costs are appreciated!");
+
+        user.setSupport(support);
+        return user;
+    }
 }

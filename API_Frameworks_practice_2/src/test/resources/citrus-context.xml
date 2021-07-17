@@ -72,17 +72,17 @@
     <!--    </citrus:schema-repository>-->
 
 
-<!--    <citrus:message-validators>-->
-<!--        <citrus:validator ref="defaultXmlMessageValidator"/>-->
-<!--        <citrus:validator ref="defaultXpathMessageValidator"/>-->
-<!--        <citrus:validator ref="defaultGroovyXmlMessageValidator"/>-->
-<!--        <citrus:validator ref="defaultPlaintextMessageValidator"/>-->
-<!--        <citrus:validator ref="defaultBinaryBase64MessageValidator"/>-->
-<!--        <citrus:validator ref="defaultGzipBinaryBase64MessageValidator"/>-->
-<!--        <citrus:validator ref="defaultJsonMessageValidator"/>-->
-<!--        <citrus:validator ref="defaultJsonPathMessageValidator"/>-->
-<!--        <citrus:validator ref="defaultGroovyJsonMessageValidator"/>-->
-<!--        <citrus:validator ref="defaultXhtmlMessageValidator"/>-->
-<!--    </citrus:message-validators>-->
+    <citrus:message-validators>
+        <citrus:validator ref="defaultXmlMessageValidator"/>
+        <citrus:validator ref="defaultXpathMessageValidator"/>
+        <citrus:validator ref="defaultGroovyXmlMessageValidator"/>
+        <citrus:validator ref="defaultPlaintextMessageValidator"/>
+        <citrus:validator ref="defaultBinaryBase64MessageValidator"/>
+        <citrus:validator ref="defaultGzipBinaryBase64MessageValidator"/>
+        <citrus:validator ref="defaultJsonMessageValidator"/>
+        <citrus:validator ref="defaultJsonPathMessageValidator"/>
+        <citrus:validator ref="defaultGroovyJsonMessageValidator"/>
+        <citrus:validator ref="defaultXhtmlMessageValidator"/>
+    </citrus:message-validators>
     	
 </beans>
