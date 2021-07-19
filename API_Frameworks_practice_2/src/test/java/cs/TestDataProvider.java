@@ -5,9 +5,6 @@ import com.consol.citrus.context.TestContext;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
 import com.consol.citrus.message.MessageType;
 import com.consol.citrus.testng.CitrusParameters;
-import cs.pojo.Data;
-import cs.pojo.Support;
-import cs.pojo.User;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
@@ -48,30 +45,9 @@ public class TestDataProvider extends TestNGCitrusTestRunner {
                 .receive()
                 .response(HttpStatus.OK)
                 .messageType(MessageType.JSON)
-                .payload(getJsonData(Integer.valueOf(id), name, surname), "objectMapper")
-                .ignore("$.data.email")
-                .ignore("$.data.avatar")
-                .ignore("$.support.url")
-                .ignore("$.support.text")
+                .validate("$.data.id", id)
+                .validate("$.data.first_name", name)
+                .validate("$.data.last_name", surname)
         );
-    }
-
-    public User getJsonData(Integer id, String name, String surname){
-        User user = new User();
-
-        Data data = new Data();
-        data.setId(id);
-        data.setEmail("janet.weaver@reqres.in");
-        data.setFirstName(name);
-        data.setLastName(surname);
-        data.setAvatar("https://reqres.in/img/faces/2-image.jpg");
-        user.setData(data);
-
-        Support support = new Support();
-        support.setUrl("https://reqres.in/#support-heading");
-        support.setText("To keep ReqRes free, contributions towards server costs are appreciated!");
-
-        user.setSupport(support);
-        return user;
     }
 }
