@@ -2,19 +2,19 @@ package com.example.auto;
 
 public class Car {
     // Strong Dependency.......
-//    private ClassicConfiguration classicConfiguration;
+    private ClassicConfiguration classicConfiguration;
     //or
 //    private SportConfiguration sportConfiguration;
 
-//    public String readyForSale() {
-//      classicConfiguration = new ClassicConfiguration();
-//      return "Car Ready in: " + classicConfiguration.makeConfiguration();
+    public String readyForSale() {
+      classicConfiguration = new ClassicConfiguration();
+      return "Car Ready in: " + classicConfiguration.makeConfiguration();
 
       //or
 //      sportConfiguration = new SportConfiguration();
 //      return "Car Ready in: " + sportConfiguration.makeConfiguration();
 
-//    }
+    }
 
 
     // Interface Week Dependency.......
@@ -29,14 +29,14 @@ public class Car {
 
 
     // Constructor Injection.......
-    private Configurable configuration;
-
-    public Car(Configurable configuration) {
-        this.configuration = configuration;
-    }
-
-    public String readyForSale(){
-        return "Car Ready in: " + configuration.makeConfiguration();
-    }
+//    private Configurable configuration;
+//
+//    public Car(Configurable configuration) {
+//        this.configuration = configuration;
+//    }
+//
+//    public String readyForSale(){
+//        return "Car Ready in: " + configuration.makeConfiguration();
+//    }
 
 }
