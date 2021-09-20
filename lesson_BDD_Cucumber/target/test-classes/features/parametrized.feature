@@ -1,6 +1,6 @@
 Feature: Save data in DB
 
-#  @smoke
+
   Scenario: Save information about activity for user id "2" in BD
     Given We have user id "2" in system
     When Getting information about user "2" with name "Janet" and surname "Weaver"

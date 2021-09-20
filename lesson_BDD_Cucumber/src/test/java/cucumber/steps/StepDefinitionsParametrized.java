@@ -22,7 +22,8 @@ public class StepDefinitionsParametrized {
                 .when()
                 .get("https://reqres.in/api/users/" + id)
                 .then()
-                .extract().response();
+                .extract()
+                .response();
 
         System.out.println(response.getBody().prettyPrint());
         Assertions.assertEquals(200, response.statusCode());
