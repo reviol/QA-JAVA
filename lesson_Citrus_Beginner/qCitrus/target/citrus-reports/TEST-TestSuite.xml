@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSuite" time="0.0" tests="1" errors="0" skipped="0" failures="1">
+    <testcase name="FirstTestCreateUser.getTestActions" classname="tests.FirstTestCreateUser" time="0.0">
+      <failure type="com.consol.citrus.exceptions.TestCaseFailedException" message="Failed to validate JSON text:
+{&quot;name&quot;:&quot;Nick&quot;,&quot;job&quot;:&quot;Teacher&quot;,&quot;id&quot;:&quot;946&quot;,&quot;createdAt&quot;:&quot;2021-09-30T18:36:31.222Z&quot;} Values not equal for entry: &apos;createdAt&apos;, expected &apos;unknown&apos; but was &apos;2021-09-30T18:36:31.222Z&apos;">
+        <![CDATA[
+        com.consol.citrus.exceptions.TestCaseFailedException: Failed to validate JSON text:
+{"name":"Nick","job":"Teacher","id":"946","createdAt":"2021-09-30T18:36:31.222Z"} Values not equal for entry: 'createdAt', expected 'unknown' but was '2021-09-30T18:36:31.222Z'
+	at com.consol.citrus.TestCase.executeAction(TestCase.java:227)
+	at com.consol.citrus.dsl.runner.DefaultTestRunner.run(DefaultTestRunner.java:188)
+	at com.consol.citrus.dsl.runner.DefaultTestRunner.http(DefaultTestRunner.java:540)
+	at com.consol.citrus.dsl.testng.TestNGCitrusTestRunner.http(TestNGCitrusTestRunner.java:375)
+	at tests.FirstTestCreateUser.getTestActions(FirstTestCreateUser.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:223)
+	at com.consol.citrus.dsl.testng.TestNGCitrusTest.invokeTestMethod(TestNGCitrusTest.java:128)
+	at com.consol.citrus.dsl.testng.TestNGCitrusTest.run(TestNGCitrusTest.java:110)
+	at com.consol.citrus.dsl.testng.TestNGCitrusTest.run(TestNGCitrusTest.java:56)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:221)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:657)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{"name":"Nick","job":"Teacher","id":"946","createdAt":"2021-09-30T18:36:31.222Z"} Values not equal for entry: 'createdAt', expected 'unknown' but was '2021-09-30T18:36:31.222Z'
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:127)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:62)
+	at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:231)
+	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:128)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:42)
+	at com.consol.citrus.dsl.actions.DelegatingTestAction.doExecute(DelegatingTestAction.java:54)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:42)
+	at com.consol.citrus.TestCase.executeAction(TestCase.java:220)
+	... 32 more
+Caused by: java.lang.IllegalArgumentException: Values not equal for entry: 'createdAt', expected 'unknown' but was '2021-09-30T18:36:31.222Z'
+	at org.springframework.util.Assert.isTrue(Assert.java:116)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:236)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:115)
+	... 40 more
+
+        ]]>
+      </failure>
+    </testcase>
+</testsuite>
