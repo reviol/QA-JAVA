@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="0.0" tests="2" errors="0" skipped="0" failures="0">
-    <testcase name="FirstTestCreateUser.getTestActions" classname="tests.FirstTestCreateUser" time="0.0"/>
-    <testcase name="FirstTestGetUser.getTestActions" classname="tests.FirstTestGetUser" time="0.0"/>
+<testsuite name="TestSuite" time="0.0" tests="26" errors="0" skipped="0" failures="0">
+    <testcase name="FirstTestCreateUser.getTestActions" classname="cs.tests.FirstTestCreateUser" time="0.0"/>
+    <testcase name="FirstTestGetUser.getTestActions" classname="cs.tests.FirstTestGetUser" time="0.0"/>
+    <testcase name="FirstTestSOAP.getTestActions" classname="cs.tests.FirstTestSOAP" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestMock.getTestActions" classname="cs.tests.TestMock" time="0.0"/>
 </testsuite>

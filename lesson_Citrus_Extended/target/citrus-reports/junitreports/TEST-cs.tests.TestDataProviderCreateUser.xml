@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cs.tests.TestDataProviderCreateUser" time="0.0" tests="10" errors="0" skipped="0" failures="0">
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+    <testcase name="TestDataProviderCreateUser.getTestActions" classname="cs.tests.TestDataProviderCreateUser" time="0.0"/>
+</testsuite>

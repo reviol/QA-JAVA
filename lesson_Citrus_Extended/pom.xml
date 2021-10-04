@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-  <groupId>demo</groupId>
-  <artifactId>extended</artifactId>
+  <groupId>cs</groupId>
+  <artifactId>citrus</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Citrus Integration Test</name>
   
@@ -63,6 +63,12 @@
       <artifactId>slf4j-log4j12</artifactId>
       <version>${slf4j.version}</version>
     </dependency>
+      <dependency>
+          <groupId>jakarta.xml.ws</groupId>
+          <artifactId>jakarta.xml.ws-api</artifactId>
+          <version>2.3.2</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
   
   <build>
@@ -71,9 +77,9 @@
         <groupId>com.consol.citrus.mvn</groupId>
         <artifactId>citrus-maven-plugin</artifactId>
         <version>${citrus.version}</version>
-        <configuration>
-<!--            <targetPackage>demo</targetPackage>-->
-        </configuration>
+<!--        <configuration>-->
+<!--            <targetPackage>cs</targetPackage>-->
+<!--        </configuration>-->
       </plugin>
 
       <plugin>
@@ -109,6 +115,29 @@
           </execution>
         </executions>
       </plugin>
+
+<!--      <plugin>-->
+<!--        <groupId>org.apache.cxf</groupId>-->
+<!--        <artifactId>cxf-codegen-plugin</artifactId>-->
+<!--        <version>3.3.4</version>-->
+<!--        <executions>-->
+<!--                    <execution>-->
+<!--                      <id>generate-sources-api</id>-->
+<!--                      <phase>generate-sources</phase>-->
+<!--                      <configuration>-->
+<!--                      <sourceRoot>${basedir}/src/test/java</sourceRoot>-->
+<!--                      <wsdlOptions>-->
+<!--                        <wsdlOption>-->
+<!--                          <wsdl>https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL</wsdl>-->
+<!--                        </wsdlOption>-->
+<!--                      </wsdlOptions>-->
+<!--                    </configuration>-->
+<!--                      <goals>-->
+<!--                        <goal>wsdl2java</goal>-->
+<!--                      </goals>-->
+<!--                    </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
     </plugins>
   </build>
 </project>

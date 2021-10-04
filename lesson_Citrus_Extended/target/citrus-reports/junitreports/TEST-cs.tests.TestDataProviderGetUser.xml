@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cs.tests.TestDataProviderGetUser" time="0.0" tests="12" errors="0" skipped="0" failures="0">
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+    <testcase name="TestDataProviderGetUser.getTestActions" classname="cs.tests.TestDataProviderGetUser" time="0.0"/>
+</testsuite>
