@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>demo</groupId>
-  <artifactId>qCitrus</artifactId>
+  <artifactId>beginner</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Citrus Integration Test</name>
   
@@ -72,7 +72,7 @@
         <artifactId>citrus-maven-plugin</artifactId>
         <version>${citrus.version}</version>
         <configuration>
-            <targetPackage>demo</targetPackage>
+<!--            <targetPackage>demo</targetPackage>-->
         </configuration>
       </plugin>
 

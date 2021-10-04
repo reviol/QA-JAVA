@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="qCitrus" />
+        <module name="beginner" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="qCitrus" target="1.8" />
+      <module name="beginner" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

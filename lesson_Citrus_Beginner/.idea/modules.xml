@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/qCitrus.iml" filepath="$PROJECT_DIR$/qCitrus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beginner.iml" filepath="$PROJECT_DIR$/beginner.iml" />
     </modules>
   </component>
 </project>
