@@ -38,12 +38,9 @@ public class FirstTestCreateUser extends TestNGCitrusTestRunner {
                         .extractFromPayload("$.id", "currentId")
                         .extractFromPayload("$.createdAt", "createdAt")
                         .ignore("$.createdAt")
-//                        .ignore("$.id")
+//                        .ignore("$.id")ex
         );
-
         echo("currentId = ${currentId} and createdAt = ${createdAt}");
-
-
     }
 
     public CreateUserResponse getResponseData(String name, String job) {

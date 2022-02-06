@@ -2,7 +2,7 @@ package cs.behaviors;
 
 import com.consol.citrus.dsl.runner.AbstractTestBehavior;
 import com.consol.citrus.message.MessageType;
-import cs.pojo.CreateUserResponse;
+import cs.pojo.http.CreateUserResponse;
 import org.springframework.http.HttpStatus;
 
 public class CreateUserBehavior extends AbstractTestBehavior {

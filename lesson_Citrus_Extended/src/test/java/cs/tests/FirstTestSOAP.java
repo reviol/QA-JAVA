@@ -6,14 +6,13 @@ import com.consol.citrus.context.TestContext;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
 import com.dataaccess.webservicesserver.NumberToDollars;
 import com.dataaccess.webservicesserver.NumberToDollarsResponse;
+import cs.behaviors.CreateUserBehavior;
 import cs.features.PojoToXML;
 import org.testng.annotations.Test;
 
 public class FirstTestSOAP extends TestNGCitrusTestRunner {
 
     private TestContext context;
-
-
 
     @Test(description = "Получение информации о пользователе", enabled=true)
     @CitrusTest
@@ -46,6 +45,7 @@ public class FirstTestSOAP extends TestNGCitrusTestRunner {
                 .payload(ptxRs.convert(NumberToDollarsResponse.class, getNumberToDollarsResponse(), "http://www.dataaccess.com/webservicesserver/", "NumberToDollarsResponse"))
         );
     }
+
 
     public NumberToDollars getNumberToDollarsRequest() {
         NumberToDollars numberToDollars = new NumberToDollars();

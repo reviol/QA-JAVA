@@ -4,10 +4,9 @@ import com.consol.citrus.annotations.CitrusTest;
 import com.consol.citrus.context.TestContext;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
 import com.consol.citrus.message.MessageType;
-import cs.behaviors.CreateUserBehavior;
-import cs.pojo.Data;
-import cs.pojo.Support;
-import cs.pojo.User;
+import cs.pojo.http.Data;
+import cs.pojo.http.Support;
+import cs.pojo.http.User;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Test;
 

@@ -5,7 +5,7 @@ import com.consol.citrus.context.TestContext;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
 import com.consol.citrus.message.MessageType;
 import com.consol.citrus.testng.CitrusParameters;
-import cs.pojo.CreateUserResponse;
+import cs.pojo.http.CreateUserResponse;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;

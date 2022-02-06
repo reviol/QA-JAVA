@@ -9,6 +9,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:oxm="http://www.springframework.org/schema/oxm"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:citrus-websocket="http://www.citrusframework.org/schema/websocket/config"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
@@ -17,7 +18,8 @@
        http://www.citrusframework.org/schema/jms/config http://www.citrusframework.org/schema/jms/config/citrus-jms-config.xsd
        http://www.citrusframework.org/schema/ws/config http://www.citrusframework.org/schema/ws/config/citrus-ws-config.xsd
        http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd
-       http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+       http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd
+       http://www.citrusframework.org/schema/websocket/config http://www.citrusframework.org/schema/websocket/config/citrus-websocket-config.xsd">
 	
     <!-- Common settings -->
     <context:property-placeholder location="classpath:citrus.properties"/>
@@ -30,6 +32,7 @@
     <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
         <property name="serializationInclusion" value="NON_NULL"/>
     </bean>
+    <bean class="com.consol.citrus.report.MessageTracingTestListener"/>
 
     <citrus-http:client id="restClientReqres"
                         request-url="${url}"
@@ -46,17 +49,21 @@
                         auto-start="true"
                         timeout="15000"/>
 
+    <citrus-websocket:client id="wssClient"
+                             url="${urlWSS}"
+                             timeout="15000"/>
+
 <!--     SOAP WS Client-->
         <citrus-ws:client id="soapClient"
                           request-url="${urlSOAP}"
-                          timeout="60000"/>
+                          timeout="15000"/>
 
     <!-- SOAP WS Server -->
-    <!--    <citrus-ws:server id="soapServer"-->
-    <!--                      port="${server.port}"-->
-    <!--                      auto-start="true"-->
-    <!--                      resource-base="src/test/resources/schemas/new"-->
-    <!--                      timeout="600000"/>-->
+<!--        <citrus-ws:server id="soapServer"-->
+<!--                          port="${server.port}"-->
+<!--                          auto-start="true"-->
+<!--                          resource-base="src/test/resources/schemas/new"-->
+<!--                          timeout="600000"/>-->
 
     <!--For SOAP 1.1-->
     <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">

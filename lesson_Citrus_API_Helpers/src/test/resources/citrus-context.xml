@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:citrus="http://www.citrusframework.org/schema/config"
+       xmlns:citrus-jms="http://www.citrusframework.org/schema/jms/config"
+       xmlns:citrus-ws="http://www.citrusframework.org/schema/ws/config"
+       xmlns:citrus-http="http://www.citrusframework.org/schema/http/config"
+       xmlns:citrus-test="http://www.citrusframework.org/schema/testcase"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:citrus-websocket="http://www.citrusframework.org/schema/websocket/config"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
+       http://www.citrusframework.org/schema/jms/config http://www.citrusframework.org/schema/jms/config/citrus-jms-config.xsd
+       http://www.citrusframework.org/schema/ws/config http://www.citrusframework.org/schema/ws/config/citrus-ws-config.xsd
+       http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd
+       http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd
+       http://www.citrusframework.org/schema/websocket/config http://www.citrusframework.org/schema/websocket/config/citrus-websocket-config.xsd">
+	
+    <!-- Common settings -->
+    <context:property-placeholder location="classpath:citrus.properties"/>
+
+    <citrus:schema-repository id="schemaRepository"/>
+
+    <citrus:global-variables>
+        <citrus:variable name="project.name" value="Citrus Integration Tests"/>
+        <citrus:file path="classpath:citrus.properties"/>
+    </citrus:global-variables>
+
+    <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
+        <property name="serializationInclusion" value="NON_NULL"/>
+    </bean>
+
+    <!--Настройки БД Postgres-->
+    <bean id="sqlHelper" class="org.postgresql.ds.PGSimpleDataSource">
+        <property name="serverName" value="${db.server.name}"/>
+        <property name="portNumber" value="${db.server.port}"/>
+        <property name="databaseName" value="${db.name}"/>
+        <property name="user" value="${db.user}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+
+    <citrus-http:server
+            id="restHelperServer"
+            port="5555"
+            auto-start="true"
+            timeout="30000"/>
+
+    <citrus-http:client
+            id="restClientReqresMock"
+            request-url="${urlMock}"
+            content-type="application/json"
+            timeout="30000"/>
+
+    <citrus-jms:endpoint
+            id="mqHelperConsumer"
+            destination-name="${queueIN}"
+            connection-factory="mqAuthConnectionFactory"
+            message-converter="jmsMessageConverter"
+            timeout="30000"/>
+
+    <citrus-jms:endpoint
+            id="mqHelperProduser"
+            destination-name="${queueOUT}"
+            connection-factory="mqAuthConnectionFactory"
+            message-converter="jmsMessageConverter"
+            timeout="30000"/>
+
+    <bean id="connectionFactory" class="com.ibm.mq.jms.MQQueueConnectionFactory">
+        <property name="hostName" value="${mq.host}"/>
+        <property name="port" value="${mq.port}"/>
+        <property name="channel" value="${mq.channel}"/>
+        <property name="queueManager" value="${mq.manager}"/>
+        <property name="transportType" value="1" />
+    </bean>
+
+    <!--Настройки MQ-->
+        <bean id="jmsMessageConverter" class="com.consol.citrus.jms.message.JmsMessageConverter"/>
+
+        <bean id="mqAuthConnectionFactory"
+              class="org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter">
+            <property name="targetConnectionFactory" ref="connectionFactory" />
+            <property name="username">
+                <value>${mq.login}</value>
+            </property>
+            <property name="password">
+                <value>${mq.password}</value>
+            </property>
+        </bean>
+
+    <citrus-websocket:client
+            id="wssHelperClient"
+            url="${urlWSS}"
+            timeout="30000"/>
+
+    <citrus-http:client
+            id="httpHelperClient"
+            request-url="${url}"
+            content-type="application/json"
+            timeout="30000"/>
+
+    <!--     SOAP WS Client-->
+    <citrus-ws:client
+            id="soapHelperClient"
+            request-url="${urlSOAP}"
+            timeout="30000"/>
+
+    <!--For SOAP 1.1-->
+    <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
+        <property name="soapVersion">
+            <util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_11"/>
+        </property>
+    </bean>
+
+    <!--For SOAP 1.2-->
+<!--        <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">-->
+<!--          <property name="soapVersion">-->
+<!--            <util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_12"/>-->
+<!--          </property>-->
+<!--        </bean>-->
+
+    <citrus:schema-repository id="schemaRepositoryService">
+        <citrus:schemas>
+            <citrus:schema id="DATAACCESS" location="classpath:wsdl/numberconversion.wsdl" />
+        </citrus:schemas>
+    </citrus:schema-repository>
+</beans>
