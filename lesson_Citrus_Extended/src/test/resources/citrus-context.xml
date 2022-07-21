@@ -34,27 +34,30 @@
     </bean>
     <bean class="com.consol.citrus.report.MessageTracingTestListener"/>
 
-    <citrus-http:client id="restClientReqres"
+    <!--HTTP-Helper-->
+    <citrus-http:client id="httpClientHelper"
                         request-url="${url}"
                         content-type="application/json"
                         timeout="15000"/>
 
-    <citrus-http:client id="restClient"
+    <!--MOCK-Helper-->
+    <citrus-http:client id="restClientReqresMock"
                         request-url="${urlMock}"
                         content-type="application/json"
                         timeout="15000"/>
 
-    <citrus-http:server id="restServer"
+    <citrus-http:server id="restServerHelper"
                         port="5555"
                         auto-start="true"
                         timeout="15000"/>
 
-    <citrus-websocket:client id="wssClient"
+    <!--WSS-Helper-->
+    <citrus-websocket:client id="wssClientHelper"
                              url="${urlWSS}"
                              timeout="15000"/>
 
-<!--     SOAP WS Client-->
-        <citrus-ws:client id="soapClient"
+    <!--SOAP-Helper-->
+        <citrus-ws:client id="soapClientHelper"
                           request-url="${urlSOAP}"
                           timeout="15000"/>
 
@@ -97,6 +100,52 @@
 <!--    <citrus:namespace-context>-->
 <!--        <citrus:namespace prefix="web" uri="http://www.dataaccess.com/webservicesserver/"/>-->
 <!--    </citrus:namespace-context>-->
+
+    <!--Produser-Consumer-->
+    <citrus-jms:endpoint
+            id="mqHelperProduser"
+            destination-name="${queueOUT}"
+            connection-factory="mqAuthConnectionFactory"
+            message-converter="jmsMessageConverter"
+            timeout="30000"/>
+
+    <citrus-jms:endpoint
+            id="mqHelperConsumer"
+            destination-name="${queueIN}"
+            connection-factory="mqAuthConnectionFactory"
+            message-converter="jmsMessageConverter"
+            timeout="30000"/>
+
+    <bean id="connectionFactory" class="com.ibm.mq.jms.MQQueueConnectionFactory">
+        <property name="hostName" value="${mq.host}"/>
+        <property name="port" value="${mq.port}"/>
+        <property name="channel" value="${mq.channel}"/>
+        <property name="queueManager" value="${mq.manager}"/>
+        <property name="transportType" value="1" />
+    </bean>
+
+    <!--Настройки MQ-->
+    <bean id="jmsMessageConverter" class="com.consol.citrus.jms.message.JmsMessageConverter"/>
+
+    <bean id="mqAuthConnectionFactory"
+          class="org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter">
+        <property name="targetConnectionFactory" ref="connectionFactory" />
+        <property name="username">
+            <value>${mq.login}</value>
+        </property>
+        <property name="password">
+            <value>${mq.password}</value>
+        </property>
+    </bean>
+
+    <!--SQL-Helper, Настройки БД Postgres-->
+    <bean id="sqlHelper" class="org.postgresql.ds.PGSimpleDataSource">
+        <property name="serverName" value="${db.server.name}"/>
+        <property name="portNumber" value="${db.server.port}"/>
+        <property name="databaseName" value="${db.name}"/>
+        <property name="user" value="${db.user}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
 
     <citrus:message-validators>
         <citrus:validator ref="defaultXmlMessageValidator"/>

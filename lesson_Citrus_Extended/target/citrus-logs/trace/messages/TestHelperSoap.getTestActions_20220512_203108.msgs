@@ -1,0 +1,27 @@
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<NumberToDollars xmlns="http://www.dataaccess.com/webservicesserver/">
+    <dNum>15</dNum>
+</NumberToDollars>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <m:NumberToDollarsResponse xmlns:m="http://www.dataaccess.com/webservicesserver/">
+      <m:NumberToDollarsResult>fifteen dollars</m:NumberToDollarsResult>
+    </m:NumberToDollarsResponse>
+  </soap:Body>
+</soap:Envelope>
+
+======================================================================
+

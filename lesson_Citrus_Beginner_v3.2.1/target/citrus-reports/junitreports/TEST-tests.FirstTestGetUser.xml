@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.FirstTestGetUser" time="0.0" tests="1" errors="0" skipped="0" failures="0">
+    <testcase name="FirstTestGetUser.getTestActions" classname="tests.FirstTestGetUser" time="0.0"/>
+</testsuite>

@@ -34,27 +34,30 @@
     </bean>
     <bean class="com.consol.citrus.report.MessageTracingTestListener"/>
 
-    <citrus-http:client id="restClientReqres"
+    <!--HTTP-Helper-->
+    <citrus-http:client id="httpClientHelper"
                         request-url="${url}"
                         content-type="application/json"
                         timeout="15000"/>
 
-    <citrus-http:client id="restClient"
+    <!--MOCK-Helper-->
+    <citrus-http:client id="restClientReqresMock"
                         request-url="${urlMock}"
                         content-type="application/json"
                         timeout="15000"/>
 
-    <citrus-http:server id="restServer"
+    <citrus-http:server id="restServerHelper"
                         port="5555"
                         auto-start="true"
                         timeout="15000"/>
 
-    <citrus-websocket:client id="wssClient"
+    <!--WSS-Helper-->
+    <citrus-websocket:client id="wssClientHelper"
                              url="${urlWSS}"
                              timeout="15000"/>
 
-<!--     SOAP WS Client-->
-        <citrus-ws:client id="soapClient"
+    <!--SOAP-Helper-->
+        <citrus-ws:client id="soapClientHelper"
                           request-url="${urlSOAP}"
                           timeout="15000"/>
 

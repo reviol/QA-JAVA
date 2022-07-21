@@ -1,0 +1,37 @@
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+GET https://reqres.in/api/users/2
+Accept:text/plain, application/json, application/*+json, */*
+Content-Type:application/json;charset=UTF-8
+Content-Length:0
+
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+HTTP/1.1 200 OK
+Date:Thu, 12 May 2022 17:29:22 GMT
+Content-Type:application/json; charset=utf-8
+Transfer-Encoding:chunked
+Connection:keep-alive
+X-Powered-By:Express
+Access-Control-Allow-Origin:*
+Etag:W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"
+Via:1.1 vegur
+Cache-Control:max-age=14400
+CF-Cache-Status:HIT
+Age:5807
+Expect-CT:max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To:{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=%2F%2FAFDZGSXA8DVhxInL%2B2Kj5qCkARrBH5Bdom7ceiVVR%2BXOwcstIwO0Y5IRT2w%2BNBOj3p1s0pD1s6ohSCFPzeH2Sb1T7xaQJicdos0K0zvLiuSMYMIr0IYpHpB3I%3D"}],"group":"cf-nel","max_age":604800}
+NEL:{"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Vary:Accept-Encoding
+Server:cloudflare
+CF-RAY:70a4e04d5833fa1c-AMS
+alt-svc:h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+======================================================================
+

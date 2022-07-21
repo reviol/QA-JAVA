@@ -19,9 +19,12 @@ public class TestHelperSQL extends TestNGCitrusTestRunner {
     public void getTestActions() {
         this.context = citrus.createTestContext();
 
-        sql(action -> action.dataSource(sqlHelper).statement("delete from dbo.request_log"));
+        sql(action -> action
+                .dataSource(sqlHelper)
+                .statement("delete from dbo.request_log"));
 
-        query(action -> action.dataSource(sqlHelper)
+        query(action -> action
+                .dataSource(sqlHelper)
                 .statement("select client_id from db.offer where offer_id = 2")
                 .extract("client_id", "checkClientId"));
     }
