@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>lesson</groupId>
-  <artifactId>lastVersionCitrus</artifactId>
+  <artifactId>citrusBeginner</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Citrus Integration Test</name>
 
