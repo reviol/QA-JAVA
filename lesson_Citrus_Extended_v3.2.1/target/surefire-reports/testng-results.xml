@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-21T14:14:04 MSK" name="Surefire suite" finished-at="2022-10-21T14:14:05 MSK" duration-ms="1277">
+    <groups>
+    </groups>
+    <test started-at="2022-10-21T14:14:04 MSK" name="Surefire test" finished-at="2022-10-21T14:14:05 MSK" duration-ms="1277">
+      <class name="tests.TestMock">
+        <test-method is-config="true" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:tests.TestMock@5a411614]" started-at="2022-10-21T14:14:01 MSK" name="beforeSuite" finished-at="2022-10-21T14:14:04 MSK" duration-ms="3047" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7858d31d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="before()[pri:0, instance:tests.TestMock@5a411614]" started-at="2022-10-21T14:14:04 MSK" name="before" finished-at="2022-10-21T14:14:04 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method signature="getTestActions()[pri:0, instance:tests.TestMock@5a411614]" started-at="2022-10-21T14:14:04 MSK" name="getTestActions" description="Получение информации о пользователе" finished-at="2022-10-21T14:14:05 MSK" duration-ms="1246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTestActions -->
+        <test-method is-config="true" signature="after()[pri:0, instance:tests.TestMock@5a411614]" started-at="2022-10-21T14:14:05 MSK" name="after" finished-at="2022-10-21T14:14:05 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
+        <test-method is-config="true" signature="afterSuite(org.testng.ITestContext)[pri:0, instance:tests.TestMock@5a411614]" started-at="2022-10-21T14:14:05 MSK" name="afterSuite" finished-at="2022-10-21T14:14:05 MSK" duration-ms="57" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7858d31d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- tests.TestMock -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

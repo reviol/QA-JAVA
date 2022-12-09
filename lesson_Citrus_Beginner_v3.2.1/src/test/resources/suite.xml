@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="WINDOWS-1251"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login Register tests" parallel="classes" thread-count="2"  >
+    <test name="Register tests" >
+        <classes>
+            <class name="com.latoken.autotest.web.exchange.auth.SignUpUITest"/>
+            <class name="com.latoken.autotest.web.exchange.auth.SignInlUITest"/>
+            <class name="com.latoken.autotest.web.exchange.auth.RestorePasswordUiTest"/>
+            <class name="com.latoken.autotest.web.exchange.auth.OpenFormUITest"/>
+            <class name="com.latoken.autotest.web.exchange.auth.MultiLoginTest"/>
+        </classes>
+    </test>
+</suite>

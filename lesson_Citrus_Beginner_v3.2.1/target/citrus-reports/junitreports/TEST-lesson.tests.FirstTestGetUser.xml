@@ -1,4 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="lesson.tests.FirstTestGetUser" time="0.0" tests="1" errors="0" skipped="0" failures="0">
-    <testcase name="FirstTestGetUser.getTestActions" classname="lesson.tests.FirstTestGetUser" time="0.0"/>
+<testsuite name="lesson.tests.FirstTestGetUser" time="0.0" tests="1" errors="0" skipped="0" failures="1">
+    <testcase name="FirstTestGetUser.getTestActions" classname="lesson.tests.FirstTestGetUser" time="0.0">
+      <failure type="com.consol.citrus.exceptions.TestCaseFailedException" message="Failed to validate JSON text:
+{&quot;data&quot;:{&quot;id&quot;:2,&quot;email&quot;:&quot;janet.weaver@reqres.in&quot;,&quot;first_name&quot;:&quot;Janet&quot;,&quot;last_name&quot;:&quot;Weaver&quot;,&quot;avatar&quot;:&quot;https://reqres.in/img/faces/2-image.jpg&quot;},&quot;support&quot;:{&quot;url&quot;:&quot;https://reqres.in/#support-heading&quot;,&quot;text&quot;:&quot;To keep ReqRes free, contributions towards server costs are appreciated!&quot;}} Values not equal for entry: &apos;first_name&apos;, expected &apos;Janete&apos; but was &apos;Janet&apos;">
+        <![CDATA[
+        com.consol.citrus.exceptions.TestCaseFailedException: Failed to validate JSON text:
+{"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} Values not equal for entry: 'first_name', expected 'Janete' but was 'Janet'
+	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:144)
+	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
+	at com.consol.citrus.testng.TestNGCitrusSupport.run(TestNGCitrusSupport.java:196)
+	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
+	at lesson.tests.FirstTestGetUser.getTestActions(FirstTestGetUser.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:113)
+	at com.consol.citrus.testng.TestNGCitrusSupport.run(TestNGCitrusSupport.java:114)
+	at com.consol.citrus.testng.TestNGCitrusSupport.run(TestNGCitrusSupport.java:69)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:252)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:595)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1508)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} Values not equal for entry: 'first_name', expected 'Janete' but was 'Janet'
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:120)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:59)
+	at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:267)
+	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:165)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:58)
+	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:137)
+	... 35 more
+Caused by: java.lang.IllegalArgumentException: Values not equal for entry: 'first_name', expected 'Janete' but was 'Janet'
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:217)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:183)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:108)
+	... 41 more
+
+        ]]>
+      </failure>
+    </testcase>
 </testsuite>

@@ -5,6 +5,7 @@ import com.consol.citrus.context.TestContext;
 import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
 import com.consol.citrus.testng.TestNGCitrusSupport;
 import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Test;
 import lesson.pojo.Data;
@@ -44,23 +45,27 @@ public class FirstTestGetUser extends TestNGCitrusSupport {
                 .response(HttpStatus.OK)
                 .message()
                 .type("application/json")
+
+                //json string
+//                .body("{\n" +
+//                "    \"data\": {\n" +
+//                "        \"id\": 2,\n" +
+//                "        \"email\": \"janet.weaver@reqres.in\",\n" +
+//                "        \"first_name\": \"Janet\",\n" +
+//                "        \"last_name\": \"Weaver\",\n" +
+//                "        \"avatar\": \"https://reqres.in/img/faces/2-image.jpg\"\n" +
+//                "    },\n" +
+//                "    \"support\": {\n" +
+//                "        \"url\": \"https://reqres.in/#support-heading\",\n" +
+//                "        \"text\": \"To keep ReqRes free, contributions towards server costs are appreciated!\"\n" +
+//                "    }\n" +
+//                "}")
+
+                //json POJO
                 .body(new ObjectMappingPayloadBuilder(getJsonData(), "objectMapper"))
 
+                //json string
 //                .body(new ClassPathResource("json/user2.json"))
-
-                .body("{\n" +
-                "    \"data\": {\n" +
-                "        \"id\": 2,\n" +
-                "        \"email\": \"janet.weaver@reqres.in\",\n" +
-                "        \"first_name\": \"Janet\",\n" +
-                "        \"last_name\": \"Weaver\",\n" +
-                "        \"avatar\": \"https://reqres.in/img/faces/2-image.jpg\"\n" +
-                "    },\n" +
-                "    \"support\": {\n" +
-                "        \"url\": \"https://reqres.in/#support-heading\",\n" +
-                "        \"text\": \"To keep ReqRes free, contributions towards server costs are appreciated!\"\n" +
-                "    }\n" +
-                "}")
         );
     }
 

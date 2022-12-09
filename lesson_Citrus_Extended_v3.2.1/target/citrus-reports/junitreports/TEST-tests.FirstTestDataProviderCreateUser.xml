@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.FirstTestDataProviderCreateUser" time="0.0" tests="10" errors="0" skipped="0" failures="0">
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+    <testcase name="FirstTestDataProviderCreateUser.getTestActions" classname="tests.FirstTestDataProviderCreateUser" time="0.0"/>
+</testsuite>

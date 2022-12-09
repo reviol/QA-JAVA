@@ -23,7 +23,6 @@ public class FirstTestSOAP extends TestNGCitrusSupport {
 
         CustomMarshaller<Class<NumberToDollars>> ptxRq = new CustomMarshaller<>();
         CustomMarshaller<Class<NumberToDollarsResponse>> ptxRs = new CustomMarshaller<>();
-
         run(soap()
                 .client("soapClient")
                 .send()

@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="0.0" tests="12" errors="0" skipped="0" failures="0">
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
-    <testcase name="FirstTestDataProviderGetUser.getTestActions" classname="tests.FirstTestDataProviderGetUser" time="0.0"/>
+<testsuite name="TestSuite" time="0.0" tests="3" errors="0" skipped="0" failures="0">
+    <testcase name="SampleJavaIT.echoToday" classname="demoCitrus.SampleJavaIT" time="0.0"/>
+    <testcase name="SampleJavaTest.sayHello" classname="demoCitrus.SampleJavaIT" time="0.0"/>
+    <testcase name="SampleXmlIT" classname="demoCitrus.SampleXmlIT" time="0.0"/>
 </testsuite>
